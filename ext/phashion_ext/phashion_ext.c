@@ -1,5 +1,5 @@
 #include "ruby.h"
-#include "pHash.h"
+#include <pHash.h>
 
 static VALUE image_hash_for(VALUE self, VALUE _filename) {
     char * filename = StringValuePtr(_filename);

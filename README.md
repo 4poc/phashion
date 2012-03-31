@@ -9,22 +9,15 @@ and near duplicate multimedia files (images, audio, video).  The wrapper current
 Installation
 -------------
 
-You install it just like any other Ruby gem:
-
-    gem install phashion
-
-Phashion is somewhat involved to install as it has a few dependencies.  I've wrapped up those
-dependencies into a custom tarball that is built locally just for this gem so you don't have to
-do anything special.  See the code in `ext/phashion_ext` for more details.
-
-Because of this complexity, it is possible the gem install will fail on your platform.  I've tested
-it on Mac OSX 10.6 and Ubuntu 8.04 but please contact me if you have installation problems.
-
-If you have an error upon install, like:
-
-    ld: library not found for -ljpeg
-
-you need to install libjpeg.  "brew install libjpeg" or "port install jpeg" on OSX.
+Download and install CImg: http://cimg.sourceforge.net
+(download zip and copy CImg.h to /usr/include for instance)
+Download, compile and install pHash: www.phash.org/download/
+    ./configure --prefix=/usr --disable-audio-hash --disable-video-hash
+    make
+    sudo make install
+Build&Install Gem:
+    gem build phashion.gemspec
+    gem install phashion-1.0.4.gem
 
 Usage
 ---------
@@ -34,6 +27,8 @@ Usage
     img2 = Phashion::Image.new(filename2)
     img1.duplicate?(img2)
     --> true
+    img1.fingerprint
+    --> 1234567890
 
 Author
 ==========
