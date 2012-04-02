@@ -9,13 +9,16 @@ and near duplicate multimedia files (images, audio, video).  The wrapper current
 Installation
 -------------
 
-Download and install CImg: http://cimg.sourceforge.net
-(download zip and copy CImg.h to /usr/include for instance)
+Download and install CImg: http://cimg.sourceforge.net (download zip and copy CImg.h to /usr/include for instance)
+
 Download, compile and install pHash: www.phash.org/download/
+
     ./configure --prefix=/usr --disable-audio-hash --disable-video-hash
     make
     sudo make install
+
 Build&Install Gem:
+
     gem build phashion.gemspec
     gem install phashion-1.0.4.gem
 
